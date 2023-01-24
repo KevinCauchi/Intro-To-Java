@@ -1,0 +1,58 @@
+
+
+	/*
+	Reindeer		class
+	_____________________
+	
+	-name:String
+	-weight:double
+	_____________________
+	
+	+Reindeer
+	+Reindeer(String,double)
+	+setName(String):void
+	+getName():String
+	+setWeight(double):void
+	getWeight():double
+	+showInfo():void
+	 */
+
+public class Reindeer {
+	private String name;
+	private double weight;
+	
+
+public Reindeer(String n,double w) {
+	name=n;
+	weight=w;
+	
+}
+
+public Reindeer() {
+	name=("Rudolph");
+	weight=(125.55);
+}
+
+public void setName(String n) {
+	name=n;
+}
+
+public String getName() {
+	return name;
+}
+
+public void setWeight(double w) {
+	weight=w;
+}
+
+public double getWeight() {
+	return weight;
+	
+}
+
+public void showInfo() {
+	System.out.println("Name\t"+name);
+	System.out.println("Weight\t"+weight);
+	System.out.println("Have a nice Break");
+}
+}
