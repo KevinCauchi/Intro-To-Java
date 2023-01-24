@@ -1,0 +1,91 @@
+/*
+/* Project:  Lab1
+* Class: interestofdeposit.java
+* Author: Kevin Cauchi
+* Date: February 24th, 2022 
+* This program takes the balance, interest rate, and number of years and produces a chart showing the values
+*/ 
+
+
+package interestofdeposit;
+import java.util.Scanner;
+import java.util.*;
+
+public class interestofdeposit {
+
+	public static void main (String args[]) {
+	
+		Scanner scan = new Scanner(System.in);
+		
+		
+		printIntro(); //Prints Intro Code
+		
+		System.out.println("Enter your current balace: "); //Asking user for input statements
+		double balance=scan.nextDouble();
+		System.out.println("Enter the rate of interest: ");
+		double rate=scan.nextDouble();
+		System.out.println("Enter the ammount of years: ");
+		int year =scan.nextInt();
+		
+	
+		double interest;
+		interest = calcInterest(balance, rate); //Importing the Interest Formula
+		
+		
+		
+		printTable();  	//Table formatting loop
+		for (int i=1;i<=year;i++) {
+			System.out.println(i + "\t" + balance + "\t\t" + interest + "\t\t" + (balance+interest));
+			balance=interest+balance;
+			
+		}
+	}
+	
+	static void printIntro() { //Introduction
+		System.out.println("This program will calculate the interest earned on a certificate of deposit (CD) over a specified number of years. ");
+
+	}
+	
+	static  void   printTable() { // Formatting for the Table
+		
+		System.out.println("\nYear\tBalance\t\tInterest\tNew Balance");
+		System.out.println("----\t-------\t\t--------\t-----------");
+		
+	
+		}
+		
+	
+	
+	static void printRow(int rowNum,double balance,double interest) {	// This method is responsible for printing a single row of the table
+		
+	System.out.println(rowNum + "\t"+ balance +"\t\t"+ interest+"\t\t" + (balance+interest)); 
+	
+	
+			
+	}
+	static double calcInterest(double balance, double rate) {// Calculating the interest formula.
+			double interest = ((balance*rate)/100);
+		
+		return interest;	//Returns Interst formula
+	}
+}
+
+ 
+/*
+Output
+
+Year	Balance		Interest	New Balance
+----	-------		--------	-----------
+1		1000.0		650.0		1650.0
+2		1650.0		650.0		2300.0
+3		2300.0		650.0		2950.0
+4		2950.0		650.0		3600.0
+5		3600.0		650.0		4250.0
+6		4250.0		650.0		4900.0
+7		4900.0		650.0		5550.0
+8		5550.0		650.0		6200.0
+9		6200.0		650.0		6850.0
+10		6850.0		650.0		7500.0
+
+ */
+
