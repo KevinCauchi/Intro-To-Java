@@ -1,0 +1,53 @@
+package RandomNumberDemo;
+import java.util.Random;
+import java.util.Scanner;
+public class RandomNumberDemo {
+public static void main(String[] args)
+
+{
+Random randomGenerator =new Random();
+int r1=randomGenerator.nextInt();
+int r2=randomGenerator.nextInt(100);
+double r3=randomGenerator.nextDouble();
+System.out.println(r1);
+System.out.println(r2);
+System.out.println(r3);
+System.out.println(Math.random());
+int guess=(int)(100.0*Math.random())+1;
+System.out.println(guess);
+ 
+ int x = (int)(Math.random()*((5-2)+1))+2;
+System.out.println(x);
+
+
+
+int yourGuess, compGuess;
+Scanner scan =new Scanner(System.in);
+System.out.println("\nPlease pick a number between 1 and 10 to see if you match the computer!");
+yourGuess=scan.nextInt();
+compGuess=(int)(10.0*Math.random())+1;
+if(yourGuess==compGuess)
+{
+System.out.println("You win! You both chose\n"+compGuess);
+}
+else
+{
+System.out.println("Sorry you lost! You chose "+yourGuess+"\nand computer chose "+compGuess);
+}
+scan.close();
+}}
+
+
+/*
+Please pick a number between 1 and 50 to see if you match the computer!7
+Sorry you lost! You chose 7
+and computer chose 24
+*/
+/*
+326238223
+82
+0.2773375317480078
+0.6102722984085597
+1
+2
+*/
