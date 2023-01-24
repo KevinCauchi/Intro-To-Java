@@ -1,0 +1,40 @@
+package ifDemoOne;
+import java.util.Scanner;
+public class ifDemoOne {
+public static void main (String[] args) {
+	
+	Scanner scan =new Scanner(System.in);
+	
+	int grade, score,age;
+	//Create the if statement to display You get an A if grade is at least 95
+	// In Order to test an interactive grade it must be before the test condition.
+	System.out.println("Enter your Test Grade");
+	
+	grade=scan.nextInt();
+	
+	if (grade>=95)
+	{System.out.println("You get an A");
+	}
+	
+	//Create an if statement to display you get a perfect score if Exam is exactly 104
+	
+	System.out.println("Enter your score on the TEST:");
+	score=scan.nextInt();
+	if (score==104)
+		
+	{System.out.println("You got a Perfect Score");
+		
+	}
+	
+	//Create an if statement to display you can order from the children's menu if your age is at most 12.
+	
+	System.out.println("Enter your age Please:");
+	age=scan.nextInt();
+	if (age<=12)
+	{System.out.println("You can order from the kids menu");}
+	
+	
+	
+	
+}
+}
