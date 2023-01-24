@@ -1,0 +1,75 @@
+/* Project:  Lab2
+* Class: PigLatin.java
+* Author: Kevin Cauchi
+* Date: February 16, 2022 
+* Write a program that converts an English word into Pig Latin. Input a word from the user, and then translate it into Pig Latin. 
+*/ 
+
+import java.util.Scanner;
+
+public class PigLatin {
+	    		public static void main(String[] args) {
+	 
+	        Scanner scan = new Scanner(System.in);
+	        
+	        System.out.print("Please Enter A Phrase: ");
+	        
+	        String wordformat = scan.nextLine();
+	        
+	        wordformat=wordformat.replaceAll(" ", " ");
+	        
+	        System.out.println("\"" + wordformat + "\" ");
+	        
+	        Scanner englishWord = new Scanner(wordformat);  
+	        System.out.println( "in Pig Latin is ");
+	        
+	       
+	 
+	        while (englishWord.hasNext()) {
+	            String pigLatin = englishWord.next();
+	            System.out.print("\"" +convertPigLatinWord(pigLatin));
+	            System.out.print("\"");
+	            
+	            
+	            scan.close();
+	        }      
+	 
+	    }
+	   
+	    public static boolean isVowel(char c) {
+	    	
+    		return (c == 'A' || c == 'a' || c == 'E' || c == 'e' || c == 'I' || 
+    				c == 'i' || c == 'O' || c == 'o' || c == 'U' || c == 'u');
+    }
+ 
+
+
+	    public static String convertPigLatinWord(String englishWord)
+	    { 
+	        String piglatinWord;
+	        
+	        if(isVowel (englishWord.charAt(0))) 
+	        	
+	        piglatinWord=englishWord+"-way";
+	        else if(englishWord.startsWith("th")||englishWord.startsWith("Th")||
+	        		englishWord.startsWith("tH")||englishWord.startsWith("TH"))
+	        {
+	            piglatinWord=englishWord.substring(2)+"-"+englishWord.substring(0,2)+"ay";}
+	        
+	        else
+	        	
+	            piglatinWord=englishWord.substring(1)+"-"+englishWord.charAt (0)+"ay"; 
+	        
+	        return piglatinWord; 
+	        
+	    }
+	}
+	  
+/*
+ Please enter a Word: Humpty
+"Humpty" 
+in Pig Latin is 
+"umpty-Hay"
+ */
+
+	
