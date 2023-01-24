@@ -1,0 +1,44 @@
+/* Project:  Lab3
+  Class: GroceryList.java
+  Author: Kevin Cauchi
+  Date: February 25th, 2022 
+  This represents a list of items to buy from the market
+*/ 
+
+
+public class GroceryList {
+    
+	GroceryItemorder[] groceries; //imports class
+    int groceriesList;
+    
+    
+    public GroceryList() //Constructs a new empty grocery list
+   
+    { 
+        groceries = new GroceryItemorder[10]; // Max 10 units
+        groceriesList = 0;
+    }
+        
+    public void add(GroceryItemorder item)//Adds the given item order to this list if the list has fewer than 10 items. 
+   
+    
+    { 
+        this.groceries[groceriesList] = item; //creates list
+        groceriesList++; 
+    } 
+    
+    public double getTotalCost() //Returns the total sum cost of all grocery item orders in this list. 
+
+    {         
+    	double totalCost = 0;
+        for (int i = 0; i < this.groceriesList; i++) //for loop adding total cost
+        	
+        { 
+                   totalCost += this.groceries[i].getCost();
+        }
+        return totalCost;
+   
+    
+    
+   }
+  }
