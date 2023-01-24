@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Vowels {
+public static void main(String []args) {
+	
+	Scanner scan =new Scanner (System.in);
+	
+	System.out.println("Enter a Word");
+	String x = scan.nextLine();
+	
+	   int count=0;
+	   String y=x.toLowerCase();
+	   
+	   for(int i=0;i<y.length();i++) {
+	      
+	       if(y.charAt(i)== 'a' || y.charAt(i)== 'e' 
+	    		   || y.charAt(i)== 'i' || y.charAt(i)== 'o' 
+	    		   || y.charAt(i)== 'u')
+	           count++;
+	   }
+	   
+	   System.out.println("The word "+x+" has "+count+" vowels.");
+	   
+	   scan.close();
+}
+}
+
+/*
+Enter a Word
+Hello
+The word Hello has 2 vowels.
+
+
+Enter a Word
+Testing
+The word Testing has 2 vowels.
+
+*/
