@@ -1,0 +1,76 @@
+// This Project is just a more advanced verison of InterestofDeposit
+
+
+package interestofdeposit;
+
+//imports
+import java.util.Scanner;
+public class InterestofDeposit2 {
+
+//print intro
+static void printIntro() {
+System.out.println("This program takes balance and interest rate as doubles and will calculate the amount paid over an int amount of time");
+}
+	
+//calculate interest	
+static double interestOutput(double balance, double rate) {
+double interest;
+interest = (balance*rate);
+interest = (interest/100);
+return interest;
+}
+
+//creating the table
+static void createTable() {
+System.out.println("Year\tInterest\tBalance\tNew Balance");
+System.out.println("----\t--------\t-------\t-----------");
+}
+
+
+//profit!
+
+public static void main(String[]args){	
+
+//variable declaration
+Scanner kb = new Scanner(System.in);
+double balance;
+int time;
+double rate;
+int i;
+double interest; 
+double newBalance;
+
+
+//running intro method
+printIntro();
+
+//variable assignment
+System.out.println("Enter balance as double: ");
+balance = kb.nextDouble();
+
+System.out.println("Enter number of years as int");
+time = kb.nextInt();
+
+System.out.println("Enter rate as double (without the %)");
+rate = kb.nextDouble();
+
+interest = interestOutput(balance, rate);
+
+newBalance = (balance+interest);
+//formatting
+createTable();
+for (i=1;i<=time;i++) {
+	System.out.println(i + "\t" + interest + "\t\t" + balance + "\t" + newBalance);
+	balance=interest+balance;
+	newBalance=(balance+interest);
+}
+	
+
+	
+	
+	
+	
+	
+kb.close();
+}
+}
