@@ -1,0 +1,193 @@
+
+/* Project:  Lab4
+  Class: Lab4Guessing.java
+  Author: Kevin Cauchi
+  Date: March 16th, 2022 
+  This creates a Game where the computer generates a random number then the player has to guess that number till correct.
+  */ 
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Lab4Guessing {
+	
+	public static void main(String args[])
+	{
+		Scanner scan =new Scanner (System.in); //Scanner class for player input
+		Random rand =new Random(); // Random class to generate number
+		
+		
+		int games=0;
+		int total=0;
+		char userInput; //If player wants to continue by typing either "y" & "Y" or "n" & "N"
+		
+		Instructions(); //Prints instructions
+		do
+
+		{
+
+		int guesses=game(rand,scan); //imports game
+
+		games++; //counts games
+
+		if(guesses>total)
+		total=guesses;
+
+		System.out.print("Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? ");
+
+		userInput=Character.toUpperCase(scan.next().charAt(0)); //If player wants to continue by typing either "y" & "Y" or "n" & "N" & also Yes or No since it takes the first letter value. Makes their input to Capital then reads the First letter to continue or end the game
+
+
+		}
+		while(userInput=='Y'); //Continues the game
+
+		report(total,games); // Closes the game then gives the report
+	
+		}	
+
+
+
+	public static void Instructions() // Tells the instructions for what the program does
+	{
+		System.out.println("This program will allow you to play a guessing game.");
+		System.out.println("I will think of a number between 1 and 100");
+		System.out.println("and will allow you to guess until you get it.");
+		System.out.println("For each guess, I will tell you whether the");
+		System.out.println("right answer is higher or lower than your guess.");
+		System.out.println("Im thinking of a number...");
+
+
+		
+	}
+	
+	public static int game(Random rand, Scanner scan) { //Game method 
+		
+		int num=rand.nextInt(100)+1; //This is the range with with 100 inclusive
+		int guess=0,playerGuess; 
+
+		do
+		{System.out.print("Enter guess: ");
+
+		playerGuess=scan.nextInt();//
+									//// enters the Users guess and keeps going.
+		guess++; 				   //
+		if(num>playerGuess)
+
+		System.out.println("My number is higher ");
+
+		else if(num<playerGuess) // If generated number is higher than guessed
+
+		System.out.println("My number is lower ");// If generated number is lower than guessed
+
+		}
+		while(playerGuess!=num); //While loop to end when the player guess is correct
+
+		System.out.println("You got it right in "+ guess+ " guesses"); // Output statement when player gets right answer 
+
+		return guess;
+
+		
+	}
+	
+	public static void report(double total,double  game) { // Final game report when player hits "n" or "N" to exit the game
+		double x= game/total; 						// Average of Guesses/Games played
+		System.out.println("\nTotal Games : "+game);// Prints total games played
+		System.out.println("Total guesses made: "+total); // Prints total guesses made
+		System.out.println("Game/Total: "+ x);// Prints average of Guesses/Games played
+	
+		
+	}
+	
+}
+
+
+/* 
+ This program will allow you to play a guessing game.
+I will think of a number between 1 and 100
+and will allow you to guess until you get it.
+For each guess, I will tell you whether the
+right answer is higher or lower than your guess.
+Im thinking of a number...
+Enter guess: 22
+My number is higher 
+Enter guess: 34
+My number is higher 
+Enter guess: 66
+My number is higher 
+Enter guess: 98
+My number is lower 
+Enter guess: 72
+My number is higher 
+Enter guess: 86
+My number is lower 
+Enter guess: 85
+My number is lower 
+Enter guess: 79
+My number is lower 
+Enter guess: 69
+My number is higher 
+Enter guess: 76
+My number is lower 
+Enter guess: 75
+My number is lower 
+Enter guess: 73
+My number is higher 
+Enter guess: 74
+You got it right in 13 guesses
+Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? y
+Enter guess: 40
+My number is higher 
+Enter guess: 50
+My number is higher 
+Enter guess: 89
+My number is lower 
+Enter guess: 58
+My number is higher 
+Enter guess: 67
+My number is higher 
+Enter guess: 70
+My number is lower 
+Enter guess: 68
+You got it right in 7 guesses
+Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? y
+Enter guess: 50
+My number is higher 
+Enter guess: 70
+My number is higher 
+Enter guess: 90
+My number is lower 
+Enter guess: 80
+My number is lower 
+Enter guess: 76
+My number is lower 
+Enter guess: 74
+You got it right in 6 guesses
+Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? y
+Enter guess: 50
+My number is higher 
+Enter guess: 70
+My number is higher 
+Enter guess: 90
+My number is lower 
+Enter guess: 88
+You got it right in 4 guesses
+Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? y
+Enter guess: 70
+My number is lower 
+Enter guess: 60
+My number is lower 
+Enter guess: 30
+My number is lower 
+Enter guess: 22
+My number is lower 
+Enter guess: 10
+My number is higher 
+Enter guess: 17
+You got it right in 6 guesses
+Do you want to play again? Type 'Y' for yes and 'N' for no (Y/N)? n
+
+Total Games : 5
+Total guesses made: 13
+Guesses/Games: 2.0
+
+ */
