@@ -1,0 +1,121 @@
+
+public class Fahrenheit {
+public static void main(String[]arsgs) {
+	
+	for(int i =0;i<=100;i++) {
+		int celsius=(((i-32)*5)/9);
+		System.out.println("Fahrenheit: "+ i+ "\tCelsius: "+ celsius);
+	}
+	
+	
+}
+	
+}
+
+
+/*
+
+Farenheit: 0	Celcius: -17
+Farenheit: 1	Celcius: -17
+Farenheit: 2	Celcius: -16
+Farenheit: 3	Celcius: -16
+Farenheit: 4	Celcius: -15
+Farenheit: 5	Celcius: -15
+Farenheit: 6	Celcius: -14
+Farenheit: 7	Celcius: -13
+Farenheit: 8	Celcius: -13
+Farenheit: 9	Celcius: -12
+Farenheit: 10	Celcius: -12
+Farenheit: 11	Celcius: -11
+Farenheit: 12	Celcius: -11
+Farenheit: 13	Celcius: -10
+Farenheit: 14	Celcius: -10
+Farenheit: 15	Celcius: -9
+Farenheit: 16	Celcius: -8
+Farenheit: 17	Celcius: -8
+Farenheit: 18	Celcius: -7
+Farenheit: 19	Celcius: -7
+Farenheit: 20	Celcius: -6
+Farenheit: 21	Celcius: -6
+Farenheit: 22	Celcius: -5
+Farenheit: 23	Celcius: -5
+Farenheit: 24	Celcius: -4
+Farenheit: 25	Celcius: -3
+Farenheit: 26	Celcius: -3
+Farenheit: 27	Celcius: -2
+Farenheit: 28	Celcius: -2
+Farenheit: 29	Celcius: -1
+Farenheit: 30	Celcius: -1
+Farenheit: 31	Celcius: 0
+Farenheit: 32	Celcius: 0
+Farenheit: 33	Celcius: 0
+Farenheit: 34	Celcius: 1
+Farenheit: 35	Celcius: 1
+Farenheit: 36	Celcius: 2
+Farenheit: 37	Celcius: 2
+Farenheit: 38	Celcius: 3
+Farenheit: 39	Celcius: 3
+Farenheit: 40	Celcius: 4
+Farenheit: 41	Celcius: 5
+Farenheit: 42	Celcius: 5
+Farenheit: 43	Celcius: 6
+Farenheit: 44	Celcius: 6
+Farenheit: 45	Celcius: 7
+Farenheit: 46	Celcius: 7
+Farenheit: 47	Celcius: 8
+Farenheit: 48	Celcius: 8
+Farenheit: 49	Celcius: 9
+Farenheit: 50	Celcius: 10
+Farenheit: 51	Celcius: 10
+Farenheit: 52	Celcius: 11
+Farenheit: 53	Celcius: 11
+Farenheit: 54	Celcius: 12
+Farenheit: 55	Celcius: 12
+Farenheit: 56	Celcius: 13
+Farenheit: 57	Celcius: 13
+Farenheit: 58	Celcius: 14
+Farenheit: 59	Celcius: 15
+Farenheit: 60	Celcius: 15
+Farenheit: 61	Celcius: 16
+Farenheit: 62	Celcius: 16
+Farenheit: 63	Celcius: 17
+Farenheit: 64	Celcius: 17
+Farenheit: 65	Celcius: 18
+Farenheit: 66	Celcius: 18
+Farenheit: 67	Celcius: 19
+Farenheit: 68	Celcius: 20
+Farenheit: 69	Celcius: 20
+Farenheit: 70	Celcius: 21
+Farenheit: 71	Celcius: 21
+Farenheit: 72	Celcius: 22
+Farenheit: 73	Celcius: 22
+Farenheit: 74	Celcius: 23
+Farenheit: 75	Celcius: 23
+Farenheit: 76	Celcius: 24
+Farenheit: 77	Celcius: 25
+Farenheit: 78	Celcius: 25
+Farenheit: 79	Celcius: 26
+Farenheit: 80	Celcius: 26
+Farenheit: 81	Celcius: 27
+Farenheit: 82	Celcius: 27
+Farenheit: 83	Celcius: 28
+Farenheit: 84	Celcius: 28
+Farenheit: 85	Celcius: 29
+Farenheit: 86	Celcius: 30
+Farenheit: 87	Celcius: 30
+Farenheit: 88	Celcius: 31
+Farenheit: 89	Celcius: 31
+Farenheit: 90	Celcius: 32
+Farenheit: 91	Celcius: 32
+Farenheit: 92	Celcius: 33
+Farenheit: 93	Celcius: 33
+Farenheit: 94	Celcius: 34
+Farenheit: 95	Celcius: 35
+Farenheit: 96	Celcius: 35
+Farenheit: 97	Celcius: 36
+Farenheit: 98	Celcius: 36
+Farenheit: 99	Celcius: 37
+Farenheit: 100	Celcius: 37
+
+
+*/
