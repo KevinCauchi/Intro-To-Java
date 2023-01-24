@@ -1,0 +1,55 @@
+/*Project:  Lab3
+  Class: GroceryItemorder.java
+  Author: Kevin Cauchi
+  Date: February 25th, 2022 
+  This represents a request to purchase a particular item in a given quantity 
+*/ 
+
+
+
+public class GroceryItemorder { // class and imports 
+    double quantity;
+    String name;
+    double pricePerUnit;
+    GroceryItemorder[] groceries; 
+    int groceriesList;
+
+    
+    public GroceryItemorder( String name , int quantity , double pricePerUnit) //Constructs  an  item  order  to  purchase by name, quantity, & which cost.
+ 
+     {
+        this.pricePerUnit = pricePerUnit;
+        this.name = name;
+        this.quantity = quantity;  
+     }
+
+    public double getCost () //returns the total cost of this item in its given quantity
+
+    { 
+    	       return pricePerUnit*quantity; //Math formula for total cost
+    } 
+    
+    
+    public void setQuantity ( int quantity) //Sets  this  grocery  item’s  quantity  to  be  the given value.
+    
+    { 
+        this.quantity = quantity;
+        
+    }
+   
+    public String toString() //Return the quantity and the name of the item.
+    
+    { 
+        String result ="";
+        for (int i = 0; i <this.groceriesList ; i++) 
+        {
+         result+=groceries[i];
+        }
+		return result;
+       
+    }
+
+    
+    
+
+}
