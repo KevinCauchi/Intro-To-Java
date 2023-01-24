@@ -1,0 +1,92 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class RockPaper {
+public static void main(String[]args) {
+	
+	Scanner scan =new Scanner(System.in);
+	System.out.println("We are going to play a game of rock paper scissors.\nPlease choose 1 for Rock, 2 for Paper, or 3 for Scissors.");
+	
+	Random randomGenerator=new Random();	
+	int yourChoice;
+	
+	yourChoice=scan.nextInt();
+	int r1=randomGenerator.nextInt(3)+1;
+	String cc="";
+	if(r1==1)
+	{
+		cc="Rock";
+	}
+	else if(r1==2)
+	{
+		cc="Paper";
+	}
+	else if (r1==3)
+	{
+		cc="Scissors";
+	}
+
+	switch(yourChoice) 
+	{
+
+	case 1:
+	{System.out.println("You Chose: Rock");
+	break;
+	}
+	case 2:
+	{
+		System.out.println("You Chose: Paper");
+		break;
+	}
+
+	case 3:
+	{System.out.println("You Chose: Scissors");
+	break;
+	}
+	
+	default:
+	{System.out.println("INVALID choice. Enter 1, 2, or 3.");
+	
+	}
+	
+}
+System.out.println("Computer Chose: "+cc);
+	
+	if (yourChoice==r1)
+	{System.out.println("You Tied");
+	}
+	else if ((yourChoice==(1)&& r1==(3)) || yourChoice==(3)&&r1==(2) || (yourChoice==(3)&&r1==(1)))
+			{System.out.println("You Won");
+		}
+	else
+	{System.out.println("You Lost");}
+	
+	scan.close();
+}}
+
+/*
+ 
+We are going to play a game of rock paper scissors.
+Please choose 1 for Rock, 2 for Paper, or 3 for Scissors.
+1
+You Chose: Rock
+Computer Chose: Rock
+You Tied
+
+
+We are going to play a game of rock paper scissors.
+Please choose 1 for Rock, 2 for Paper, or 3 for Scissors.
+3
+You Chose: Scissors
+Computer Chose: Rock
+You Won
+
+We are going to play a game of rock paper scissors.
+Please choose 1 for Rock, 2 for Paper, or 3 for Scissors.
+2
+You Chose: Paper
+Computer Chose: Rock
+You Lost
+ 
+ */
+
