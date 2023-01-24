@@ -1,0 +1,84 @@
+/* Project:  Lab5
+* Class: PigLatin2.java
+* Author: Kevin Cauchi
+* Program: This is a program that converts an English word into Pig Latin. The program is supposed to read 
+the input from a given text file and translate each word into Pig Latin.
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class PigLatin2 {
+
+	public static void main(String args[]) throws FileNotFoundException { // Main method
+
+		File file = new File("/Users/kevin/Downloads/data (1).txt"); // File Location
+
+		Scanner input = new Scanner(file); 				// Scanner input to allow read line by .hasNext() and .hasNextLine()
+
+		while (input.hasNextLine()) {					// While loop to find tokens in the data.txt file
+			String line = input.nextLine();				// Created a String called line to read the original document
+
+			System.out.print("\"" + line + "\" in pig latin is \"");	// Format for the Original before it is translated to Piglatin
+			
+			Scanner words = new Scanner(line);					// Imported a second Scanner object to find all words and then to convert them later
+
+			while (words.hasNext()) {							//Second while loop to start the converter
+
+				String word = words.next();						// Scans all the words from the String line which is basically the original file
+				String translatedWord = pigLatinWord(word);		// Pig Latin converter formula - makes the String translatedWord into the final conversion
+				System.out.print(translatedWord + " ");			// Prints the converted word in a single line
+
+			}
+			System.out.println("\""); 			// Spaces out all the translations since its println - then it also adds the last quotation mark
+
+		}
+	}
+
+		// File from PigLatin1 \\
+
+	public static void rite(String[] args) {
+		String word;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Word: ");
+		word = input.next();
+		System.out.println(pigLatinWord(word));
+	}
+
+	// --------------------------------------------------------
+	// Convert one word to pig Latin.
+	// Precondition: s is not an empty string
+	// Postcondition: returns a new string that is the pig Latin
+	// form of s
+	public static String pigLatinWord(String s) {
+		String pigWord;
+		if (isVowel(s.charAt(0))) {
+			pigWord = s + "-way";
+		} else if (s.startsWith("th") || s.startsWith("Th")) {
+			// or (s.toUpperCase().startsWith("TH"))
+			pigWord = s.substring(2) + "-" + s.substring(0, 2) + "ay";
+		} else {
+			pigWord = s.substring(1, s.length()) + "-" + s.charAt(0) + "ay";
+		}
+		return pigWord;
+	}
+
+	// ---------------------------------------------
+	// Determines whether c is a vowel character
+	// Precondition: c contains a letter
+	// Postcondition: returns true when c is a vowel
+	public static boolean isVowel(char c) {
+		String vowels = "aeiouAEIOU";
+		return (vowels.indexOf(c) >= 0); // when index of c in vowels is not -1, c is a vowel
+
+	}
+}
+
+//OUTPUT
+
+/*
+ * "This is a test" in pig latin is "is-Thay is-way a-way est-tay "
+ * "Here is a second line" in pig latin is
+ * "ere-Hay is-way a-way econd-say ine-lay " "and a third" in pig latin is
+ * "and-way a-way ird-thay "
+ */
