@@ -1,0 +1,94 @@
+/*
+ * Author: Kevin Cauchi
+ * Lab 6
+ * Date: 4/12/2022
+ * Program that accepts a two-dimensional integers as a parameter and returns true if it is a magic square
+ */
+
+
+
+
+public class MagicMatrix {
+
+	public static boolean isMagicSquare(int[][] a) { 			// Method given to use 	
+		if (a.length == 0) {									//  case to make instantly a magic square when all are 0  making it a magic square
+			return true;
+		}
+		int length = a[0].length;  								// Measures the length in the within the dimensions such as 2,3,3 in the bottom ex
+		for (int i = 0; i < a.length; i++) {
+			if (length != a[i].length) {						// If length is not equal then returns false
+				return false;
+			}
+		}
+		int sum = 0;											//Sum = 0
+		for (int i = 0; i < a[0].length; i++) {					//for loop to check for magic square 
+			sum += a[0][i];
+
+		}
+		for (int i = 1; i < a.length; i++) {
+			int t = 0;
+			for (int j = 0; j < a[i].length; j++) {				//created a nested for loop with another variable j 
+				t += a[i][j];
+			}
+			if (t != sum) {
+				return false;
+			}
+
+		}
+		for (int i = 1; i < a[0].length; i++) {					//runs for the next column and not out of bound
+			int t = 0;
+			for (int j = 0; j < a.length; j++) {				
+				t += a[j][i];
+			}
+			if (t != sum) {
+				return false;
+			}
+		}
+		int diagonal = 0; 											//Diagonal
+		for (int i = 0; i < a.length; i++) {						//for loop to check for magic square in diagonals
+			diagonal += a[i][i];
+		}
+		if (diagonal != sum) {  								//If diagonal isn't equal to the sum then it returns false
+			return false;
+
+		}
+
+		diagonal = 0;
+
+		for (int i = 0; i < a.length; i++) {
+			diagonal += a[i][a.length - i - 1];					
+		}
+		if (diagonal != sum) {									// If diagonal doesn't equal the sum then false
+			return false;
+		}
+		
+		return true;											// returns true to isMagicSquare
+	}
+
+	public static void main(String[] args)							// main Method to print if Magic or Not Magic Square
+
+	{
+		int a1[][] =  {{1,1},{1,1}}; 									//Given Values to test
+		
+		int a2[][] ={{5,3,1},{1,2,3},{2,4,6}};
+		
+		int a3[][]={{2,7,6},{9,5,1},{4,3,8}};
+
+		if (isMagicSquare(a1))												// Prints all the values from example input to test
+			System.out.println("Input number 1, is a Magic Square");
+		else
+			System.out.println("Input number 1, is a Not a magic Square");
+		
+		if (isMagicSquare(a2))
+			System.out.println("Input number 2, is a Magic Square");
+		else
+			System.out.println("Input number 2, is not a Magic Square");
+		
+		if (isMagicSquare(a3))
+			System.out.println("Input number 3, is a Magic Square");
+		else
+			System.out.println("Input number 3, is a Not a magic Square");
+		
+
+	}
+}
